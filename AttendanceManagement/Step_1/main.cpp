@@ -17,7 +17,8 @@ int main() {
 
     AttendanceManagement* attendanceManagement = new AttendanceManagement();
     attendanceManagement->takeAttendance(juan, algebra, "2021-06-08", true);
-    attendanceManagement->showAttendance(juan, algebra, "2021-06-08", true);
+    // attendanceManagement->showAttendance(juan, algebra, "2021-06-08", true);
+    attendanceManagement->showAllAttendances();
     
 
     delete juan;

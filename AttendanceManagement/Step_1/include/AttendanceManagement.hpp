@@ -15,6 +15,7 @@ class AttendanceManagement {
         AttendanceManagement();
         void takeAttendance(Student* student, Course* course, string datetime, bool state);
         void showAttendance(Student* student, Course* course, string datetime, bool state);
+        void showAllAttendances();
         virtual ~AttendanceManagement();
 
         

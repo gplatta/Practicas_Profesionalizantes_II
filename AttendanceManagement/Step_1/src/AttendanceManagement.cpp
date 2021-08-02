@@ -1,5 +1,8 @@
 #include "../include/AttendanceManagement.hpp"
 #include <fstream>
+#include <string>
+
+using namespace std;
 
 AttendanceManagement::AttendanceManagement() {
 }
@@ -45,6 +48,27 @@ void AttendanceManagement::showAttendance(Student* student, Course* course, stri
             << "present: " << state << ", " 
             << endl;
 }
+
+
+void AttendanceManagement::showAllAttendances() {
+    ifstream csvFile;
+    string line;
+
+    csvFile.open("./db/attendance.csv", ios::in);
+
+    if (!csvFile.eof()) {
+        getline(csvFile, line); // obtengo el encabezado y lo muestro
+        cout << line << endl;
+        getline(csvFile, line); // obtengo la primera linea de datos útiles
+        while (!csvFile.eof()) {
+            cout << line << endl;
+            getline(csvFile, line);
+        }
+    }
+    csvFile.close();
+
+}
+
 
 AttendanceManagement::~AttendanceManagement() {
 }
